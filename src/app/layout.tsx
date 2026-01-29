@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from '../components/Footer';
+import FloatingSocials from "@/components/FloatingSocials";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +27,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Global yellow wavy line background */}
+        <svg
+          className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
+          style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0 }}
+          viewBox="0 0 1920 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,100 Q480,0 960,100 T1920,100"
+            stroke="#ffe066"
+            strokeWidth="7"
+            fill="none"
+            opacity="0.7"
+          />
+        </svg>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <Navbar />
+          <FloatingSocials />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
