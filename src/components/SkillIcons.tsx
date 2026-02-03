@@ -33,7 +33,7 @@ export default function SkillIcons() {
   return (
     <div className="p-0 mt-4">
       <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2 drop-shadow">TECHNICAL SKILLS <span><GiArtificialIntelligence size={24} color="#fff" /></span></h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 sm:gap-4">
         {skills.map(({ name, icon: Icon, color }, idx) => (
           <motion.div
             key={name}
@@ -42,7 +42,7 @@ export default function SkillIcons() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.05 }}
-            className="flex flex-col items-center justify-center gap-1 bg-white rounded-lg p-3 shadow hover:shadow-xl cursor-pointer border border-black"
+            className="flex flex-col items-center justify-center gap-1 bg-white rounded-lg p-2 sm:p-3 shadow hover:shadow-xl cursor-pointer border border-black"
           >
             <Icon color={getIconColor(color)} size={30} />
             <span className="text-xs font-semibold text-black mt-1">{name}</span>
