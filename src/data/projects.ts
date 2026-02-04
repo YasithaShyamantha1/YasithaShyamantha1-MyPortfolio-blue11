@@ -65,5 +65,6 @@ export const projects = [
       "Analytics dashboard"
     ],
     github: "https://github.com/YasithaShyamantha1/Prana-Yoga.git"
+    ,image: "/Screenshot 2026-02-04 133453.png"
   }
 ];
